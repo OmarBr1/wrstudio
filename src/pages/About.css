@@ -1,0 +1,101 @@
+#About {
+  display: flex;
+  align-items: flex-start; /* align top */
+  gap: 60px;
+  padding: 80px 10%;
+  background: linear-gradient(135deg, #cce0ff, #99b3ff);
+}
+
+/* Left side: purpose blocks */
+#About .purpose {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+#About .purpose h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #042b59;
+  margin-bottom: 20px;
+}
+
+.mini-purp {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mini-purp:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.mini-purp h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #6e4aff;
+  margin-bottom: 10px;
+}
+
+.mini-purp p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2c4e6b;
+}
+
+/* Right side: sticky text and cards */
+#About .text {
+  flex: 1;
+  position: sticky;
+  top: 80px; /* keeps it below navbar */
+  align-self: flex-start;
+}
+
+#About .text h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #4a9fff;
+  margin-bottom: 20px;
+}
+
+#About .text p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #2c4e6b;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+#About .text span {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #00bfa6; /* Aqua accent */
+  margin-top: 20px;
+}
+
+/* Cards container */
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  #About {
+    flex-direction: column;
+    padding: 60px 5%;
+  }
+
+  #About .text {
+    position: relative;
+    top: 0;
+    margin-bottom: 40px;
+  }
+}

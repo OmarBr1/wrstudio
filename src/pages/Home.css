@@ -1,0 +1,177 @@
+#home {
+  position: relative;
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  align-items: center;
+  justify-content: flex-start; /* push content from the top */
+  text-align: center;
+  padding: 100px 8% 60px;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #000a24;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+}
+
+/* Text */
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  font-family: 'Arial Black', Gadget, sans-serif;
+  color: #9dc1ffda;
+  margin-bottom: 20px;
+  line-height: 1.2;
+
+}
+
+.hero-text p {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  max-width: 600px;
+  color: #cad4e2;
+  line-height: 1.7;
+  font-family: "Trebuchet MS", sans-serif;
+  font-weight: 400;
+}
+.sub-hero {
+  font-size: 1rem;
+  color: #ffd369;
+  font-weight: 500;
+}
+
+
+/* Image */
+.hero-img {
+  flex: 1;
+  max-width: 500px;
+  height: 340px;
+  background: url("../assets/hero2.gif") center/cover no-repeat;
+  border-radius: 50%;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  transition: transform 0.4s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.05);
+}
+/* Buttons container */
+.btn-sec {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* General button styles */
+.btn-sec button {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Primary button (gold) */
+.btn-sec button:first-child {
+  background: linear-gradient(135deg, #ffd369, #fbbf24);
+  color: #0f172a;
+}
+
+.btn-sec button:first-child:hover {
+  background: linear-gradient(135deg, #fbbf24, #e6b950);
+  transform: translateY(-2px);
+}
+
+/* Secondary button (navy) */
+.btn-sec button:last-child {
+  background: #1e293b;
+  color: #ffffff;
+}
+
+.btn-sec button:last-child:hover {
+  background: #0f172a;
+  transform: translateY(-2px);
+}
+
+/* Mobile: full-width buttons */
+@media (max-width: 480px) {
+  .btn-sec {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .btn-sec button {
+    width: 100%;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  #home {
+    padding: 100px 6%;
+  }
+}
+
+@media (max-width: 768px) {
+  #home {
+    padding: 80px 5%;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+  }
+
+  .hero-img {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+
+  .btn-sec {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .btn-sec button {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-img {
+    height: 240px;
+    width: 100%;
+  }}
