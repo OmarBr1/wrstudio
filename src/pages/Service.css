@@ -1,46 +1,111 @@
 #services {
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  color: #fff;
+  background: linear-gradient(135deg, #f2f6ff, #e5ecff);
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  background-repeat: repeat;
+  background-size: auto;
   padding: 100px 8%;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle overlay to balance text readability */
+#services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4);
+  z-index: 0;
+}
+
+.our-service {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+  margin: 0 auto 60px;
 }
 
 .our-service h2 {
-  font-size: 32px;
+  font-size: 2.4rem;
   font-weight: 700;
-  color: #4a9fff; /* Navy */
+  background: linear-gradient(90deg, #3a46b5, #845ee3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 16px;
 }
 
 .our-service p {
-  font-size: 1.2rem;
-  color: #ffefefd3;
+  font-size: 1.1rem;
+  color: #111;
   max-width: 700px;
   margin: 0 auto 50px auto;
-  line-height: 1.6;
+  line-height: 1.7;
+  opacity: 0.9;
 }
 
+/* Cards container (responsive grid or center for your CircularGallery) */
 .cards-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap; /* prevent wrapping which breaks circular layout */
+  gap: 40px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+  width: 100%;           /* make it full width */
+  min-width: 320px;      /* optional minimum for small screens */
+  overflow: visible;     /* allow circular items to overflow edges */
 }
 
+/* Ensure CircularGallery fills its parent */
+.cards-container > div {
+  width: 100%;          /* full width of container */
+  max-width: 1200px;    /* optional max-width for large screens */
+  height: 600px;        /* keep your desired height */
+  position: relative;
+}
+/* CTA Button */
 #services button {
-  padding: 14px 28px;
-  background: #00bfa6; /* Aqua accent */
+  position: relative;
+  z-index: 1;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #8f2ce6, #c82185);
   color: #ffffff;
   border: none;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 #services button:hover {
-  background: #009e8a; /* Darker aqua */
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #c82185, #8f2ce6);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  #services {
+    padding: 80px 6%;
+  }
+}
+
+@media (max-width: 768px) {
+  .our-service h2 {
+    font-size: 1.9rem;
+  }
+
+  .our-service p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  #services button {
+    font-size: 15px;
+    padding: 12px 24px;
+  }
 }

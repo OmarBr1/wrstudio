@@ -22,8 +22,8 @@ const Services = () => {
           <div style={{ height: "600px", position: "relative" }}>
             <CircularGallery
               bend={3}
-              textColor="#ffffff"
-              borderRadius={0.05}
+              textColor="#010f55ff"
+              borderRadius={0.08}
               scrollEase={0.02}
               items={[
                 { image: Blog, text: "Personal Blog" },
