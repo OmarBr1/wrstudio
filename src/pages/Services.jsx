@@ -3,8 +3,8 @@ import Blog from "../assets/blog.jpg";
 import Estore from "../assets/estore2.jpg";
 import LandingPage from "../assets/landingPage.jpg";
 import Saas from "../assets/saasi.jpg";
-
 import "./Service.css";
+
 
 const Services = () => {
   return (
@@ -23,13 +23,15 @@ const Services = () => {
             <CircularGallery
               bend={3}
               textColor="#010f55ff"
+              scrollSpeed={3.5}
               borderRadius={0.08}
-              scrollEase={0.02}
+              scrollEase={0.25}
               items={[
-                { image: Blog, text: "Personal Blog" },
-                { image: Estore, text: "EStore" },
+                { image: Blog,  text: "Personal Blog" },
+                { image: Estore, text: "E-Store" },
                 { image: LandingPage, text: "Landing Page" },
                 { image: Saas, text: "A Special Service" },
+                { image: Saas, text: "Admin dashboard" },
               ]}
             />
           </div>

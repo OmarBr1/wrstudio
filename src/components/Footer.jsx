@@ -7,7 +7,7 @@ const Footer = () => {
       <div style={styles.container}>
         {/* About / Logo */}
         <div style={styles.section}>
-          <h2 style={styles.logo}>W&R Studio</h2>
+          <h2 style={styles.logo}>Codevnium</h2>
           <p style={styles.text}>
             Transforming visions into lasting digital impact. We create modern, scalable, and user-focused digital products.
           </p>
@@ -44,7 +44,7 @@ const Footer = () => {
       </div>
 
       <div style={styles.bottom}>
-        &copy; {new Date().getFullYear()} W&R Studio. All rights reserved.
+        &copy; {new Date().getFullYear()} Codevnium. All rights reserved.
       </div>
     </footer>
   );

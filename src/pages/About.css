@@ -1,6 +1,6 @@
 #About {
   padding: 80px 10%;
-    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
   background-repeat: repeat;
   background-size: auto;
   position: relative;
@@ -66,31 +66,45 @@
   border-left: 2px dashed #a7c2ff;
 }
 
+/* The cards */
 .mini-purp {
   background: #ffffff;
   border-radius: 12px;
-  padding: 18px 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 20px 22px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  min-width: 0; /* helps flex/grid shrink properly */
 }
 
 .mini-purp:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .mini-purp h3 {
-  color: #a89eff;
-  font-size: 18px;
-  margin-bottom: 6px;
+  color: #3a5cff; /* Elegant accent blue matching brand */
+  font-family: "Poppins", sans-serif; /* Modern readable font */
+  font-weight: 600;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.mini-purp h3:hover {
+  color: #00bfa6; /* Subtle hover accent for interactivity */
 }
 
 .mini-purp p {
-  color: #133c77;
-  font-size: 15px;
-  line-height: 1.5;
+  color: #555; /* Keep it slightly gray for balance */
+  font-family: "Inter", sans-serif; /* Clean and easy on eyes */
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
+/* Footer */
 .about-footer {
   display: block;
   text-align: center;
@@ -100,16 +114,53 @@
   font-weight: 500;
 }
 
-/* Responsive */
+/* 🌐 Responsive fixes */
+@media (max-width: 1024px) {
+  #About {
+    padding: 60px 6%;
+  }
+  .mini-branch {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+}
+
 @media (max-width: 768px) {
   .about-tree::before {
     left: 10px;
   }
   .branch::before {
     left: 10px;
-    width: 18px;
+    width: 16px;
   }
   .mini-branch {
     padding-left: 15px;
+    border-left: 2px dashed #bcd0ff;
+    grid-template-columns: 1fr; /* stack vertically */
+  }
+  .mini-purp {
+    padding: 16px 18px;
+  }
+  .mini-purp h3 {
+    font-size: 16px;
+  }
+  .mini-purp p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #About {
+    padding: 50px 5%;
+  }
+  .about-main-title {
+    font-size: 28px;
+  }
+  .about-subtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  .mini-purp {
+    border-radius: 10px;
   }
 }

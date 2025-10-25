@@ -1,14 +1,25 @@
+/* Light mode (default) */
+:root {
+  --accent-primary: #2563eb;
+  --accent-secondary: #3b82f6;
+  --accent-tertiary: #60a5fa;
+  --text-color: #1f2937;
+  --background-color: #fefefe;
+}
+
 #home {
   position: relative;
   display: flex;
-  flex-direction: column; /* stack children vertically */
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* push content from the top */
+  justify-content: flex-start;
   text-align: center;
   padding: 100px 8% 60px;
-  min-height: 100vh;
-  overflow: hidden;
-  background-color: #ffffffa7;
+  min-height: 100vh; /* Full viewport height */
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  background-repeat: repeat;
+  background-size: auto;  overflow: hidden;
+  margin-top: 0; /* Remove margin for flush alignment */
 }
 
 .hero-content {
@@ -26,7 +37,6 @@
   height: auto;
 }
 
-
 /* Text */
 .hero-text {
   flex: 1;
@@ -36,26 +46,25 @@
   font-size: clamp(2rem, 5vw, 3.2rem);
   font-weight: 800;
   font-family: 'Arial Black', Gadget, sans-serif;
-  color: #3a5cff;
+  color: var(--accent-primary);
   margin-bottom: 20px;
   line-height: 1.2;
-
 }
 
 .hero-text p {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
   max-width: 600px;
-  color: #000;
+  color: var(--text-color);
   line-height: 1.7;
   font-family: "Trebuchet MS", sans-serif;
   font-weight: 400;
 }
+
 .sub-hero {
   font-size: 1rem;
   color: #ffd369;
   font-weight: 500;
 }
-
 
 /* Image */
 .hero-img {
@@ -67,12 +76,12 @@
   border-radius: 30%;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
   transition: transform 0.4s ease;
-  z-index: 0;
 }
 
 .hero-img:hover {
   transform: scale(1.05);
 }
+
 /* Buttons container */
 .btn-sec {
   display: flex;
@@ -99,7 +108,7 @@
 /* Primary button (gold) */
 .btn-sec button:first-child {
   background: linear-gradient(135deg, #ffd369, #3d24fb);
-  color: #0f172a;
+  color: var(--text-color);
 }
 
 .btn-sec button:first-child:hover {
@@ -109,25 +118,20 @@
 
 /* Secondary button (navy) */
 .btn-sec button:last-child {
-  background: #0e0361;
+  background: var(--accent-primary);
   color: #ffffff;
 }
 
 .btn-sec button:last-child:hover {
-  background: #0f172a;
+  background: var(--accent-secondary);
   transform: translateY(-2px);
 }
 
-/* Mobile: full-width buttons */
-@media (max-width: 480px) {
-  .btn-sec {
-    flex-direction: column;
-    gap: 14px;
-  }
-
-  .btn-sec button {
-    width: 100%;
-  }
+/* Liquid background (for LiquidEther component) */
+.liquid-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
 /* Responsive adjustments */
@@ -142,22 +146,33 @@
     padding: 80px 5%;
   }
 
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
   .hero-text h1 {
-    font-size: 1.8rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
   }
 
   .hero-text p {
-    font-size: 0.95rem;
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
   }
 
   .hero-img {
     height: 240px;
+    width: 100%;
+    max-width: 400px;
   }
 }
 
 @media (max-width: 480px) {
   .hero-text h1 {
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
   }
 
   .btn-sec {
@@ -169,17 +184,3 @@
     width: 100%;
   }
 }
-@media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-text {
-    text-align: center;
-  }
-
-  .hero-img {
-    height: 240px;
-    width: 100%;
-  }}

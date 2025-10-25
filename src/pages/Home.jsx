@@ -14,7 +14,7 @@ const Home = () => {
             zIndex: 0, // stays behind
           }}
         >
-          <LiquidEther
+          {/* <LiquidEther
             colors={["#1e1b4b", "#221f16ff", "#292450ff"]}
             mouseForce={20}
             cursorSize={100}
@@ -30,7 +30,7 @@ const Home = () => {
             takeoverDuration={0.25}
             autoResumeDelay={3000}
             autoRampDuration={0.6}
-          />
+          /> */}
         </div>
 
         {/* Hero content: flex row */}
@@ -46,26 +46,13 @@ const Home = () => {
         >
           {/* Left side: text */}
           <div className="hero-text" style={{ flex: 1, paddingRight: "20px" }}>
-            <h1>
-              W&R Studio
-              {/* <RotatingText
-                texts={["Next", "Future", "Ideas", "Concepts", "And", "More!"]}
-                mainClassName="px-2 sm:px-2 md:px-3 text-[#ffd369] font-bold"
-                staggerFrom={"last"}
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "-120%" }}
-                staggerDuration={0.025}
-                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                rotationInterval={3000}
-              /> */}
-            </h1>
+            <h1>Codevnium</h1>
             <p>
-              W&R Studio turns your thoughts into reality with a click, where
-              ideas become digital reality. From sleek portfolios to powerful
-              landing pages, we design with purpose and precision.
+              Codevnium is where creativity meets code. We bring your ideas to
+              life through bold design, smart functionality, and a touch of
+              innovation.
             </p>
+
             <p className="sub-hero">
               Let’s craft your online presence together — fast, modern, and
               built to impress.
@@ -79,89 +66,89 @@ const Home = () => {
               height="140"
               viewBox="0 0 450 140"
               xmlns="http://www.w3.org/2000/svg"
+              className="codevnium-logo"
             >
               <rect width="450" height="140" fill="transparent" />
+
+              {/* Elemental emblem (C + core symbol) */}
               <g
                 fill="none"
-                stroke="#1F2937"
-                strokeWidth="5"
+                stroke="var(--accent-primary)"
+                strokeWidth="6"
                 strokeLinecap="round"
-                strokeLinejoin="round"
               >
-                <path d="M20,110 L55,20 L90,110" /> {/* W */}
-                <path d="M110,110 L145,20 L180,110 L145,65 L180,65" />{" "}
-                {/* R */}
+                <circle cx="70" cy="70" r="40" opacity="0.15" />
+                <path
+                  d="M90,45 A30,30 0 1,0 90,95"
+                  stroke="var(--accent-secondary)"
+                />
+                <circle cx="70" cy="70" r="4" fill="var(--accent-tertiary)">
+                  <animate
+                    attributeName="r"
+                    values="4;6;4"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
               </g>
+
+              {/* Brand Name */}
               <text
-                x="200"
-                y="90"
+                x="140"
+                y="80"
                 fontFamily="Poppins, sans-serif"
-                fontSize="36"
-                fill="#1F2937"
+                fontSize="40"
+                fill="var(--text-color)"
                 fontWeight="600"
+                letterSpacing="2"
               >
-                Studio
+                Codevnium
               </text>
+
+              {/* Animated energy line */}
               <line
-                x1="200"
-                y1="95"
+                x1="140"
+                y1="90"
                 x2="420"
-                y2="95"
-                stroke="#2563EB"
+                y2="90"
+                stroke="var(--accent-primary)"
                 strokeWidth="4"
                 strokeLinecap="round"
               />
-              <g>
-                <rect x="200" y="95" width="6" height="6" fill="#2563EB">
-                  <animate
-                    attributeName="x"
-                    from="200"
-                    to="420"
-                    dur="2s"
-                    repeatCount="indefinite"
-                  />
-                  <animate
-                    attributeName="opacity"
-                    values="0;1;0"
-                    dur="2s"
-                    repeatCount="indefinite"
-                  />
-                </rect>
-                <rect x="210" y="95" width="5" height="5" fill="#60A5FA">
-                  <animate
-                    attributeName="x"
-                    from="210"
-                    to="420"
-                    dur="2.5s"
-                    repeatCount="indefinite"
-                  />
-                  <animate
-                    attributeName="opacity"
-                    values="0;1;0"
-                    dur="2.5s"
-                    repeatCount="indefinite"
-                  />
-                </rect>
-                <rect x="220" y="95" width="4" height="4" fill="#3B82F6">
-                  <animate
-                    attributeName="x"
-                    from="220"
-                    to="420"
-                    dur="3s"
-                    repeatCount="indefinite"
-                  />
-                  <animate
-                    attributeName="opacity"
-                    values="0;1;0"
-                    dur="3s"
-                    repeatCount="indefinite"
-                  />
-                </rect>
-              </g>
-              <g>
-                <circle cx="55" cy="65" r="35" fill="#2563EB" opacity="0.1" />
-                <circle cx="145" cy="65" r="35" fill="#60A5FA" opacity="0.1" />
-              </g>
+              <circle cx="140" cy="90" r="4" fill="var(--accent-primary)">
+                <animate
+                  attributeName="cx"
+                  from="140"
+                  to="420"
+                  dur="3s"
+                  repeatCount="indefinite"
+                />
+                <animate
+                  attributeName="opacity"
+                  values="0;1;0"
+                  dur="3s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+
+              {/* Subtle glowing element */}
+              <circle
+                cx="70"
+                cy="70"
+                r="55"
+                stroke="var(--accent-secondary)"
+                strokeWidth="1"
+                opacity="0.1"
+              >
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  from="0 70 70"
+                  to="360 70 70"
+                  dur="10s"
+                  repeatCount="indefinite"
+                />
+              </circle>
             </svg>
           </div>
         </div>
@@ -177,3 +164,18 @@ const Home = () => {
 };
 
 export default Home;
+
+{
+  /* <RotatingText
+                texts={["Next", "Future", "Ideas", "Concepts", "And", "More!"]}
+                mainClassName="px-2 sm:px-2 md:px-3 text-[#ffd369] font-bold"
+                staggerFrom={"last"}
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.025}
+                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                rotationInterval={3000}
+              /> */
+}

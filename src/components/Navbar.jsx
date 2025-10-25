@@ -7,34 +7,95 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       {/* Logo */}
-      <div className="logo">
+      <div className="logo" >
         <svg
-          width="120"
-          height="40"
+          width="400"
+          height="140"
           viewBox="0 0 450 140"
           xmlns="http://www.w3.org/2000/svg"
+          className="codevnium-logo"
         >
           <rect width="450" height="140" fill="transparent" />
+
+          {/* Elemental emblem (C + core symbol) */}
           <g
             fill="none"
-            stroke="#006affff"
-            strokeWidth="5"
+            stroke="var(--accent-primary)"
+            strokeWidth="6"
             strokeLinecap="round"
-            strokeLinejoin="round"
           >
-            <path d="M20,110 L55,20 L90,110" /> {/* W */}
-            <path d="M110,110 L145,20 L180,110 L145,65 L180,65" /> {/* R */}
+            <circle cx="70" cy="70" r="40" opacity="0.15" />
+            <path
+              d="M90,45 A30,30 0 1,0 90,95"
+              stroke="var(--accent-secondary)"
+            />
+            <circle cx="70" cy="70" r="4" fill="var(--accent-tertiary)">
+              <animate
+                attributeName="r"
+                values="4;6;4"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </circle>
           </g>
+
+          {/* Brand Name */}
           <text
-            x="200"
-            y="90"
+            x="140"
+            y="80"
             fontFamily="Poppins, sans-serif"
-            fontSize="36"
-            fill="#bfd1ebff"
+            fontSize="40"
+            fill="var(--text-color)"
             fontWeight="600"
+            letterSpacing="2"
           >
-            Studio
+            Codevnium
           </text>
+
+          {/* Animated energy line */}
+          <line
+            x1="140"
+            y1="90"
+            x2="420"
+            y2="90"
+            stroke="var(--accent-primary)"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+          <circle cx="140" cy="90" r="4" fill="var(--accent-primary)">
+            <animate
+              attributeName="cx"
+              from="140"
+              to="420"
+              dur="3s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeName="opacity"
+              values="0;1;0"
+              dur="3s"
+              repeatCount="indefinite"
+            />
+          </circle>
+
+          {/* Subtle glowing element */}
+          <circle
+            cx="70"
+            cy="70"
+            r="55"
+            stroke="var(--accent-secondary)"
+            strokeWidth="1"
+            opacity="0.1"
+          >
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 70 70"
+              to="360 70 70"
+              dur="10s"
+              repeatCount="indefinite"
+            />
+          </circle>
         </svg>
       </div>
 
@@ -51,7 +112,7 @@ const Navbar = () => {
       {/* Navigation links */}
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li>
-          <a href="#home" onClick={() => setMenuOpen(false)}>
+          <a href="#Home" onClick={() => setMenuOpen(false)}>
             Home
           </a>
         </li>

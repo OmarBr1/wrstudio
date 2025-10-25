@@ -7,7 +7,11 @@ const Contact = () => {
   return (
     <>
       <div id="Contact">
+
+
         <div className="contact-text">
+                        <h2 className="about-main-title">Contact</h2>
+
           <div className="contact-phone">
             <FaPhone />
             <span>Phone Number</span>

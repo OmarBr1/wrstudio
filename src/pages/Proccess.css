@@ -1,0 +1,220 @@
+#Proccess {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 160px 10% 100px;
+  position: relative;
+  overflow: hidden;
+
+  /* Base gradient background */
+  background: linear-gradient(180deg, #f9fafb 0%, #f3f6ff 100%);
+}
+
+/* Overlay texture with opacity */
+#Proccess::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.8; /* adjust between 0.1 – 0.25 for best blend */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content stays above the overlay */
+#Proccess > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+#Proccess h2 {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: #1e2a38;
+  margin-bottom: 70px;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+#Proccess h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #00bfa6;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+/* Container */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+}
+
+/* Timeline line */
+.steps-container::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #00bfa6, #3a5cff);
+  transform: translateX(-50%);
+  opacity: 0.1;
+}
+
+/* Step cards */
+.step-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 50px 60px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(120px);
+  opacity: 0;
+  transition: all 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+  margin-top: 15vh;
+  width: 100%;
+  max-width: 800px;
+}
+
+.step-card.visible {
+  opacity: 1;
+  transform: translateY(30px);
+}
+
+.step-card h2 {
+  font-size: clamp(1.6rem, 2.5vw, 1.8rem);
+  color: #3a5cff;
+  margin-bottom: 15px;
+}
+
+.step-card p {
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  color: #555;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== RESPONSIVENESS ===== */
+
+/* 🖥️ Large screens / 1440px+ */
+@media (min-width: 1440px) {
+  #Proccess {
+    padding: 200px 15% 120px;
+  }
+
+  .steps-container {
+    max-width: 1100px;
+    gap: 90px;
+  }
+
+  .step-card {
+    padding: 60px 80px;
+  }
+
+  .step-card h2 {
+    font-size: 2rem;
+  }
+
+  .step-card p {
+    font-size: 1.2rem;
+  }
+}
+
+/* 💻 Tablets / medium devices (768px–1366px) */
+@media (max-width: 1366px) and (min-width: 769px) {
+  #Proccess {
+    padding: 140px 8% 90px;
+  }
+
+  .steps-container {
+    gap: 60px;
+  }
+
+  .step-card {
+    padding: 45px 40px;
+    margin-top: 12vh;
+  }
+}
+
+/* 📱 Mobile devices (max 768px) */
+@media (max-width: 768px) {
+  #Proccess {
+    padding: 120px 5% 80px;
+  }
+
+  #Proccess h2 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+  }
+
+  .steps-container {
+    gap: 50px;
+  }
+
+  .step-card {
+    padding: 35px 25px;
+    margin-top: 10vh;
+  }
+
+  .step-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .step-card p {
+    font-size: 1rem;
+  }
+
+  .steps-container::before {
+    width: 3px;
+    opacity: 0.07;
+  }
+}
+
+/* 📱 Small phones (max 480px) */
+@media (max-width: 480px) {
+  #Proccess {
+    padding: 100px 4% 60px;
+  }
+
+  #Proccess h2 {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+  }
+
+  .step-card {
+    padding: 25px 18px;
+    border-radius: 15px;
+  }
+
+  .step-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .step-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .steps-container::before {
+    display: none; /* remove line for small screens for clarity */
+  }
+}

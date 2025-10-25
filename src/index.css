@@ -6,6 +6,53 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --primary: #3a5cff;
+  --secondary: #00bfa6;
+  --highlight: #8d83ff;
+  --text-body: #133c77;
+  --bg: #fefefe;
+  --card-bg: #ffffff;
+  --gradient-line: linear-gradient(to bottom, #00bfa6, #3a5cff);
+  --footer-color: #00bfa6;
+}
+
+/* === Global Font Setup === */
+:root {
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Apply to everything */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+}
+
+/* Headings use Poppins */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Paragraphs, buttons, etc. */
+body, p, a, button, input, textarea {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Optional: smooth text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1e2a38;
+  background-color: #f9fafb;
+}
+
 
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
