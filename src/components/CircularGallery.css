@@ -1,85 +1,35 @@
 .circular-gallery {
   width: 100%;
-  height: 100%;
+  height: 60vh; /* give it real height */
+  min-height: 400px; /* ensure enough space for cards */
+  max-height: 700px;
   overflow: hidden;
   cursor: grab;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .circular-gallery:active {
   cursor: grabbing;
 }
 
-/* Each item in the circular gallery */
-.circular-gallery .circular-item {
-  width: 150px;           /* adjust size */
-  height: 150px;          /* adjust size */
-  border-radius: 16px;    /* slightly rounded for modern look */
-  overflow: hidden;
-  position: absolute;      /* will be positioned via JS for circular effect */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #1a1a2e;    /* dark theme fallback */
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.circular-gallery .circular-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.3);
-}
-
-/* The image inside each item */
-.circular-gallery .circular-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;    /* cover container */
-  object-position: center;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.circular-gallery .circular-item:hover img {
-  transform: scale(1.1);
-}
-
-/* Optional: text label overlay */
-.circular-gallery .circular-item span {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  color: #00bfa6;       /* your theme accent */
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-shadow: 0 0 6px rgba(0,0,0,0.6);
-  pointer-events: none; /* text doesn't block drag */
-}
-
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .circular-gallery .circular-item {
-    width: 120px;
-    height: 120px;
-  }
-
-  .circular-gallery .circular-item span {
-    font-size: 0.8rem;
+  .circular-gallery {
+    height: 50vh;
+    min-height: 320px;
   }
 }
 
-@media (max-width: 600px) {
-  .circular-gallery .circular-item {
-    width: 100px;
-    height: 100px;
+@media (max-width: 768px) {
+  .circular-gallery {
+    height: 45vh;
+    min-height: 260px;
   }
+}
 
-  .circular-gallery .circular-item span {
-    font-size: 0.75rem;
+@media (max-width: 480px) {
+  .circular-gallery {
+    height: 40vh;
+    min-height: 220px;
   }
 }
